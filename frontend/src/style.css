@@ -1,0 +1,12 @@
+@font-face {
+	font-family: "Inconsolata";
+	src: url("./assets/fonts/inconsolata.ttf");
+}
+
+* {
+	margin: 0;
+	padding: 0;
+
+	box-sizing: border-box;
+	font-family: "Inconsolata", sans-serif;
+}
