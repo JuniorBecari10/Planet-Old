@@ -10,3 +10,7 @@
 	box-sizing: border-box;
 	font-family: "Inconsolata", sans-serif;
 }
+
+#app {
+	padding-top: 60px;
+}
