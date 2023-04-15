@@ -10,7 +10,6 @@
   <div>
     <img src="../assets/images/svg/search-icon.svg">
     <input type="text" :placeholder="placeholder">
-    <span>{{ placeholder }}</span>
   </div>
 </template>
 
@@ -26,7 +25,7 @@
   }
 
   img {
-    margin-right: 20px;
+    margin-right: 15px;
   }
 
   input {
