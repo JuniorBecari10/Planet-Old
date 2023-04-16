@@ -15,7 +15,7 @@ export default {
 		<img src="../assets/images/png/planet.png">
 		<SearchBar placeholder="Search and Create" />
 		
-		<MenuButton />
+		<MenuButton text="Select Base Folder" iconType="folder" />
 		
 		<!-- don't show if there's no folders, or files
 			<h3>Recent Folders</h3>

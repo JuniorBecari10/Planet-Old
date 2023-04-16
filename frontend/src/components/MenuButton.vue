@@ -1,8 +1,10 @@
 <script setup>
 import { OpenDirDialog } from "../../wailsjs/go/main/App";
 
-function openDialog() {
-	OpenDirDialog('Select Base Folder', true)
+// all the functions a button can have
+
+function selectBaseFolder() {
+	OpenDirDialog()
 	.then(res => {
 		if (res === "") return;
 
@@ -11,11 +13,20 @@ function openDialog() {
 }
 </script>
 
+<script>
+  export default {
+    props: {
+      text: String,
+      iconType: String,
+    }
+  }
+</script>
+
 <template>
-  <div class="button ripple" @click="() => { openDialog(); }">
+  <div class="button ripple" @click="() => selectBaseFolder()">
 			<a href="">
-				<img src="../assets/images/svg/new-folder.svg">
-				<span>Select Base Folder</span>
+				<img v-if="iconType === 'folder'" src="../assets/images/svg/folder.svg">
+				<span>{{ text }}</span>
 			</a>
 		</div>
 </template>

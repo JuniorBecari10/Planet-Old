@@ -36,12 +36,11 @@ func (a *App) OpenFileDialog() (string, error) {
 	return result, nil
 }
 
-func (a *App) OpenDirDialog(title string, hidden bool) (string, error) {
+func (a *App) OpenDirDialog() (string, error) {
 	result, err := runtime.OpenDirectoryDialog(
 		a.ctx,
 		runtime.OpenDialogOptions {
-			Title: title,
-			ShowHiddenFiles: hidden,
+			ShowHiddenFiles: true,
 			CanCreateDirectories: true,
 		},
 	)
