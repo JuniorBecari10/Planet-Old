@@ -32,7 +32,7 @@ export default {
 			</a>
 		</div>
 		
-		<!-- don's show if there's no folders, or files
+		<!-- don't show if there's no folders, or files
 			<h3>Recent Folders</h3>
 		-->
 	</div>
