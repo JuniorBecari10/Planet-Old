@@ -19,7 +19,9 @@
     padding: 8px;
 
     display: flex;
+
     width: 100%;
+    height: 40px;
 
     border-radius: 8px;
   }
@@ -33,6 +35,8 @@
 
     border: none;
     outline: none;
+
+    font-size: 11pt;
 
     width: 100%;
     color: #fff;

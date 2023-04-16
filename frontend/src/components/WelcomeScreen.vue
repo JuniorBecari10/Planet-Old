@@ -1,21 +1,11 @@
-<script setup>
-function openDialog() {
-	OpenDirDialog('Select Base Folder', true)
-	.then(res => {
-		if (res === "") return;
-
-		alert(res);
-	});
-}
-</script>
-
 <script>
 import SearchBar from "./SearchBar.vue";
-import { OpenDirDialog } from "../../wailsjs/go/main/App";
+import MenuButton from "./MenuButton.vue";
 
 export default {
 	components: {
 		SearchBar: SearchBar,
+		MenuButton: MenuButton,
 	},
 }
 </script>
@@ -25,12 +15,7 @@ export default {
 		<img src="../assets/images/png/planet.png">
 		<SearchBar placeholder="Search and Create" />
 		
-		<div class="button ripple" @click="() => { openDialog(); }">
-			<a href="">
-				<img src="../assets/images/svg/new-folder.svg">
-				<span>Select Base Folder</span>
-			</a>
-		</div>
+		<MenuButton />
 		
 		<!-- don't show if there's no folders, or files
 			<h3>Recent Folders</h3>
@@ -62,29 +47,5 @@ div.container > *:not(img) {
 	
 	margin-left: 50%;
 	transform: translateX(-50%);
-}
-
-.button {
-	width: 100%;
-	padding: 10px;
-	border-radius: 10px;
-	
-	transition: background 0.3s;
-}
-
-.button:hover {
-	background: #22252C;
-}
-
-.button a {
-	display: flex;
-	width: 100%;
-	
-	align-items: center;
-}
-
-.button img {
-	width: 32px;
-	margin-right: 20px;
 }
 </style>

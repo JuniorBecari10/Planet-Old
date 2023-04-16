@@ -16,13 +16,14 @@ func main() {
 	app := NewApp()
 
 	// Create application with options
-	err := wails.Run(&options.App{
+	err := wails.Run(&options.App {
 		Title:  "Planet",
-		Width:  1024,
-		Height: 768,
-		AssetServer: &assetserver.Options{
+		Width:  1240,
+		Height: 740,
+		AssetServer: &assetserver.Options {
 			Assets: assets,
 		},
+		WindowStartState:   options.Maximised,
 		BackgroundColour: &options.RGBA{R: 18, G: 22, B: 29, A: 1},
 		OnStartup:        app.startup,
 		Bind: []interface{}{
