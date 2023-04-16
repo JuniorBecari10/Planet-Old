@@ -17,14 +17,16 @@
 		<img src="../assets/images/png/planet.png">
 		<SearchBar placeholder="Search and Create" />
 
-		<div class="button">
+		<div class="button ripple">
 			<a href="">
 				<img src="../assets/images/svg/new-folder.svg">
-				<span>Open Base Folder</span>
+				<span>Select Base Folder</span>
 			</a>
 		</div>
 
+		<!-- don's show if there's no folders, or files
 		<h3>Recent Folders</h3>
+		-->
 	</div>
 </template>
 
@@ -55,6 +57,14 @@
 
 	.button {
 		width: 100%;
+		padding: 10px;
+		border-radius: 10px;
+
+		transition: background 0.3s;
+	}
+
+	.button:hover {
+		background: #22252C;
 	}
 
 	.button a {

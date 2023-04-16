@@ -10,6 +10,9 @@
 	box-sizing: border-box;
 	font-family: "Inconsolata", sans-serif;
 	color: #fff;
+
+	user-select: none;
+	-webkit-user-drag: none;
 }
 
 a {
