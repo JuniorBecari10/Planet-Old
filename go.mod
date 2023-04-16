@@ -1,4 +1,4 @@
-module changeme
+module planet
 
 go 1.18
 

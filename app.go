@@ -2,7 +2,9 @@ package main
 
 import (
 	"context"
-	"fmt"
+	"os"
+	
+	"github.com/wailsapp/wails/v2/pkg/runtime"
 )
 
 // App struct
@@ -21,7 +23,65 @@ func (a *App) startup(ctx context.Context) {
 	a.ctx = ctx
 }
 
-// Greet returns a greeting for the given name
-func (a *App) Greet(name string) string {
-	return fmt.Sprintf("Hello %s, It's show time!", name)
+func (a *App) OpenFileDialog() (string, error) {
+	result, err := runtime.OpenFileDialog(
+		a.ctx,
+		runtime.OpenDialogOptions {},
+	)
+
+	if err != nil {
+		return "", err
+	}
+
+	return result, nil
+}
+
+func (a *App) OpenDirDialog(title string, hidden bool) (string, error) {
+	result, err := runtime.OpenDirectoryDialog(
+		a.ctx,
+		runtime.OpenDialogOptions {
+			Title: title,
+			ShowHiddenFiles: hidden,
+			CanCreateDirectories: true,
+		},
+	)
+
+	if err != nil {
+		return "", err
+	}
+
+	return result, nil
+}
+
+func (a *App) ReadFile(path string) (string, error) {
+	content, err := os.ReadFile(path)
+
+	if err != nil {
+		return "", err
+	}
+
+	return string(content), nil
+}
+
+func (a *App) SaveFile(path string, content string) error {
+	file, err := os.Create(path)
+
+	if err != nil {
+		return err
+	}
+
+	defer file.Close()
+	
+	_, err = file.WriteString(content)
+
+	if err != nil {
+		return err
+	}
+
+	err = file.Sync()
+	if err != nil {
+		return err
+	}
+
+	return nil
 }
