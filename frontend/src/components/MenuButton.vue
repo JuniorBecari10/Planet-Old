@@ -1,5 +1,6 @@
 <script setup>
 import { OpenDirDialog } from "../../wailsjs/go/main/App";
+import { global } from "../main.js";
 
 // all the functions a button can have
 
@@ -7,8 +8,9 @@ function selectBaseFolder() {
 	OpenDirDialog()
 	.then(res => {
 		if (res === "") return;
+		global.baseFolder = res;
 
-		alert(res);
+		alert(global.baseFolder);
 	});
 }
 </script>
@@ -27,6 +29,7 @@ function selectBaseFolder() {
 			<a href="">
 				<img v-if="iconType === 'folder'" src="../assets/images/svg/folder.svg">
 				<span>{{ text }}</span>
+				{{ global.baseFolder }}
 			</a>
 		</div>
 </template>
