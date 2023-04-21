@@ -1,15 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-export const global = {
-  data() {
-    return {
-      baseFolder: "",
-    }
-  }
-};
-
-createApp(App).mixin(global).mount('#app');
+createApp(App).mount('#app');
 
 // custom code
 
