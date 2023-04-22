@@ -1,0 +1,28 @@
+@font-face {
+	font-family: "Inconsolata";
+	src: url("./assets/fonts/inconsolata.ttf");
+}
+
+body {
+	background-color: #12161D;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+
+	box-sizing: border-box;
+	font-family: "Inconsolata", sans-serif;
+	color: #fff;
+
+	user-select: none;
+	-webkit-user-drag: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+#app {
+	padding-top: 60px;
+}
